@@ -56,7 +56,7 @@ $telegram->sendMessage([
 'reply_markup' => $share_location_markup
 ]);
 ~~~~
-4. Save and close
+4. Save and close.
 Do the same with two other steps, but insert other php codes:
 ~~~~
 if (null !== $telegram->getWebhookUpdates()->getMessage()->getLocation()->getLatitude() && null !== $telegram->getWebhookUpdates()->getMessage()->getLocation()->getLongitude())
