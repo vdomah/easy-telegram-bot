@@ -57,7 +57,7 @@ $telegram->sendMessage([
 ]);
 ~~~~
 4. Save and close.
-Do the same with two other steps, but insert other php codes:
+Do the same with two other steps, but insert another php codes:
 ~~~~
 if (null !== $telegram->getWebhookUpdates()->getMessage()->getLocation()->getLatitude() && null !== $telegram->getWebhookUpdates()->getMessage()->getLocation()->getLongitude())
 {
