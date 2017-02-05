@@ -1,6 +1,5 @@
 # easy-telegram-bot
 This is a plugin for OctoberCMS which allows to make bots for Telegram
-##Setup and using.
 ###About: 
 ###The plugin uses [irazasyed/telegram-bot-sdk](https://github.com/irazasyed/telegram-bot-sdk)
 Documentation for all methods which you can use in steps is  [there](https://telegram-bot-sdk.readme.io/docs)
