@@ -1,0 +1,21 @@
+fields:
+    name:
+        label: 'Dialog name'
+        oc.commentPosition: ''
+        span: full
+        type: text
+    steps_order:
+        label: 'Dialog steps order'
+        oc.commentPosition: ''
+        prompt: 'Add new item'
+        span: full
+        type: repeater
+        form:
+            fields:
+                step:
+                    label: Step
+                    oc.commentPosition: ''
+                    nameFrom: name
+                    descriptionFrom: description
+                    span: full
+                    type: relation

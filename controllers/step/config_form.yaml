@@ -1,0 +1,10 @@
+name: Step
+form: $/eugenetolok/telegram/models/step/fields.yaml
+modelClass: EugeneTolok\Telegram\Models\Step
+defaultRedirect: eugenetolok/telegram/step
+create:
+    redirect: 'eugenetolok/telegram/step/update/:id'
+    redirectClose: eugenetolok/telegram/step
+update:
+    redirect: eugenetolok/telegram/step
+    redirectClose: eugenetolok/telegram/step

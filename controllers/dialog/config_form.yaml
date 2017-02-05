@@ -1,0 +1,10 @@
+name: Dialog
+form: $/eugenetolok/telegram/models/dialog/fields.yaml
+modelClass: EugeneTolok\Telegram\Models\Dialog
+defaultRedirect: eugenetolok/telegram/dialog
+create:
+    redirect: 'eugenetolok/telegram/dialog/update/:id'
+    redirectClose: eugenetolok/telegram/dialog
+update:
+    redirect: eugenetolok/telegram/dialog
+    redirectClose: eugenetolok/telegram/dialog

@@ -1,0 +1,13 @@
+fields:
+    name:
+        label: 'Step name'
+        oc.commentPosition: ''
+        span: full
+        type: text
+    code:
+        label: Code
+        oc.commentPosition: ''
+        size: giant
+        language: php
+        span: full
+        type: codeeditor

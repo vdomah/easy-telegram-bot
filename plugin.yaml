@@ -1,0 +1,28 @@
+plugin:
+    name: 'eugenetolok.telegram::lang.plugin.name'
+    description: 'eugenetolok.telegram::lang.plugin.description'
+    author: 'Eugene Tolok'
+    icon: oc-icon-paper-plane
+    homepage: ''
+permissions:
+    Telegram:
+        tab: Telegram
+        label: Telegram
+navigation:
+    main-menu-item:
+        label: Telegram
+        url: eugenetolok/telegram/dialog/
+        icon: icon-paper-plane
+        sideMenu:
+            side-menu-item:
+                label: Dialogs
+                url: eugenetolok/telegram/dialog/
+                icon: icon-list
+            side-menu-item2:
+                label: Steps
+                url: eugenetolok/telegram/step/
+                icon: icon-sitemap
+            side-menu-item3:
+                label: Users
+                url: eugenetolok/telegram/user/
+                icon: icon-users

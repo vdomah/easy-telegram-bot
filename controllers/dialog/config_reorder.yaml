@@ -1,0 +1,4 @@
+title: Dialog
+modelClass: EugeneTolok\Telegram\Models\Dialog
+toolbar:
+    buttons: reorder_toolbar

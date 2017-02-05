@@ -1,0 +1,11 @@
+list: $/eugenetolok/telegram/models/user/columns.yaml
+modelClass: EugeneTolok\Telegram\Models\User
+title: User
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'eugenetolok/telegram/user/update/:id'

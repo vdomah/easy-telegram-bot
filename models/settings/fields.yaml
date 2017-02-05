@@ -1,0 +1,21 @@
+fields:
+    tg_api_key:
+        label: 'Telegram API key'
+        oc.commentPosition: ''
+        span: full
+        type: text
+    welcome_text:
+        label: 'Welcome text'
+        oc.commentPosition: ''
+        span: full
+        type: text
+    dialog_id:
+        label: 'Default dialog ID'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    step_id:
+        label: 'Default step ID'
+        span: auto
+        oc.commentPosition: ''
+        type: text

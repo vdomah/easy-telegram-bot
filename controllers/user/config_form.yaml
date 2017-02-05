@@ -1,0 +1,10 @@
+name: User
+form: $/eugenetolok/telegram/models/user/fields.yaml
+modelClass: EugeneTolok\Telegram\Models\User
+defaultRedirect: eugenetolok/telegram/user
+create:
+    redirect: 'eugenetolok/telegram/user/update/:id'
+    redirectClose: eugenetolok/telegram/user
+update:
+    redirect: eugenetolok/telegram/user
+    redirectClose: eugenetolok/telegram/user

@@ -1,0 +1,4 @@
+title: User
+modelClass: EugeneTolok\Telegram\Models\User
+toolbar:
+    buttons: reorder_toolbar

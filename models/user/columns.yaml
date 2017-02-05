@@ -1,0 +1,6 @@
+columns:
+    id:
+        label: 'Telegram ID'
+        type: number
+        searchable: true
+        sortable: true

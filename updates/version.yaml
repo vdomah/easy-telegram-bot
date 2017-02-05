@@ -1,0 +1,68 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table eugenetolok_telegram_users'
+    - builder_table_create_eugenetolok_telegram_users.php
+1.0.3:
+    - 'Drop table eugenetolok_telegram_users'
+    - builder_table_delete_eugenetolok_telegram_users.php
+1.0.4:
+    - 'Created table eugenetolok_telegram_users'
+    - builder_table_create_eugenetolok_telegram_users_2.php
+1.0.5:
+    - 'Created table eugenetolok_telegram_dialogs'
+    - builder_table_create_eugenetolok_telegram_dialogs.php
+1.0.6:
+    - 'Created table eugenetolok_telegram_steps'
+    - builder_table_create_eugenetolok_telegram_steps.php
+1.0.7:
+    - 'Updated table eugenetolok_telegram_dialogs'
+    - builder_table_update_eugenetolok_telegram_dialogs.php
+1.0.8:
+    - 'Created table eugenetolok_telegram_dialogs_steps'
+    - builder_table_create_eugenetolok_telegram_dialogs_steps.php
+1.0.9:
+    - 'Updated table eugenetolok_telegram_dialogs_steps'
+    - builder_table_update_eugenetolok_telegram_dialogs_steps.php
+1.0.10:
+    - 'Updated table eugenetolok_telegram_dialogs_steps'
+    - builder_table_update_eugenetolok_telegram_dialogs_steps_2.php
+1.0.11:
+    - 'Updated table eugenetolok_telegram_dialogs_steps'
+    - builder_table_update_eugenetolok_telegram_dialogs_steps_3.php
+1.0.12:
+    - 'Drop table eugenetolok_telegram_dialogs_steps'
+    - builder_table_delete_eugenetolok_telegram_dialogs_steps.php
+1.0.13:
+    - 'Updated table eugenetolok_telegram_users'
+    - builder_table_update_eugenetolok_telegram_users.php
+1.0.14:
+    - 'Updated table eugenetolok_telegram_users'
+    - builder_table_update_eugenetolok_telegram_users_2.php
+1.0.15:
+    - 'Updated table eugenetolok_telegram_users'
+    - builder_table_update_eugenetolok_telegram_users_3.php
+1.0.16:
+    - 'Updated table eugenetolok_telegram_users'
+    - builder_table_update_eugenetolok_telegram_users_4.php
+1.0.17:
+    - 'Updated table eugenetolok_telegram_users'
+    - builder_table_update_eugenetolok_telegram_users_5.php
+1.0.18:
+    - 'Updated table eugenetolok_telegram_users'
+    - builder_table_update_eugenetolok_telegram_users_6.php
+1.0.19:
+    - 'Updated table eugenetolok_telegram_users'
+    - builder_table_update_eugenetolok_telegram_users_7.php
+1.0.20:
+    - 'Created table eugenetolok_telegram_variables'
+    - builder_table_create_eugenetolok_telegram_variables.php
+1.0.21:
+    - 'Updated table eugenetolok_telegram_variables'
+    - builder_table_update_eugenetolok_telegram_variables.php
+1.0.22:
+    - 'Drop table eugenetolok_telegram_variables'
+    - builder_table_delete_eugenetolok_telegram_variables.php
+1.0.23:
+    - 'Updated table eugenetolok_telegram_users'
+    - builder_table_update_eugenetolok_telegram_users_8.php
