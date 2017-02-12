@@ -16,7 +16,7 @@ Route::post('bot/v3', function () {
 	function set_variable($variable_name, $variable_value, $user){
 		$decoded_json;
 		try{
-			$decoded_json = json_decode($user->varibles, true);
+			$decoded_json = json_decode($user->variables, true);
 			$decoded_json[$variable_name] = $variable_value;
 			$user->variables = json_encode($decoded_json);
 		}
