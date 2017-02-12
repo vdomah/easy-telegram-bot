@@ -5,7 +5,7 @@ use EugeneTolok\Telegram\Models\Dialog;
 use EugeneTolok\Telegram\Models\Step;
 use EugeneTolok\Telegram\Models\Settings;
 
-Route::post('eugenetolok/bot', function () {
+Route::post('bot/v3', function () {
 	$API_KEY = Settings::get('tg_api_key');
 	$telegram = new Api($API_KEY);
 	$user_id 		= $telegram->getWebhookUpdates()->getMessage()->getFrom()->getId();
