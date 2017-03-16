@@ -122,33 +122,36 @@ Route::post('bot/v3', function () {
 Route::post('bot/sendmessage', function () {
 	$API_KEY = Settings::get('tg_api_key');
 	$telegram = new Api($API_KEY);
-	if ($_POST['broadcast_type'] == 0)
-	{
-		$users_ids = explode(",", $_POST['users_ids']);
-		foreach ($users_ids as $key => $user_id) {
-			try{
-					$telegram->sendMessage([
-		            'chat_id' => $user_id,
-		            'text' => $_POST['message']
-		        ]);
+		if (isset($_POST['broadcast_type']))
+		{
+			$users = User::all();
+			foreach ($users as $key => $user) {
+				try{
+						$telegram->sendMessage([
+			            'chat_id' => $user->id,
+			            'text' => $_POST['message'],
+									'parse_mode' => 'HTML'
+			        ]);
 				}
-			catch( Exception $ErrorHandle ){
-				//
+				catch( Exception $ErrorHandle ){
+					//
+				}
 			}
 		}
-	}
-	else {
-		foreach ($users as $key => $user) {
-			try{
-				$users = User::all();
-					$telegram->sendMessage([
-		            'chat_id' => $user->id,
-		            'text' => $_POST['message']
-		        ]);
-			}
-			catch( Exception $ErrorHandle ){
-				//
+		else {
+			$users_ids = explode(",", $_POST['users_ids']);
+			foreach ($users_ids as $key => $user_id) {
+				try{
+						$telegram->sendMessage([
+			            'chat_id' => $user_id,
+			            'text' => $_POST['message'],
+									'parse_mode' => 'HTML'
+			        ]);
+					}
+				catch( Exception $ErrorHandle ){
+					//
+				}
 			}
 		}
-	}
+		return "<script>window.history.back();</script>";
 });
