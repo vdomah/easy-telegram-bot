@@ -59,49 +59,96 @@ Route::post('bot/v3', function () {
 		$user->step_count 	= 1;
 		$user->save();
 		$telegram->sendMessage([
-			  'chat_id' => $chat_id, 
+			  'chat_id' => $chat_id,
 			  'text' => Settings::get('welcome_text')
 			]);
 	}
 	try{
-		$dialog 		= Dialog::findOrFail($user->dialog_id);
-		$steps_order = array_combine(range(1, count($dialog->steps_order)), array_values($dialog->steps_order));
-		$step 			= Step::findOrFail($steps_order[$user->step_count]['step']);
-		$next_dialog 		= "";
-		$next_step			= "";
-		eval($step->code);
-		if ($next_dialog == "" && count($dialog->steps_order) == $user->step_count && $next_step == "")
+		if ($user_message != "/reset")
 		{
+			$dialog 		= Dialog::findOrFail($user->dialog_id);
+			$steps_order = array_combine(range(1, count($dialog->steps_order)), array_values($dialog->steps_order));
+			$step 			= Step::findOrFail($steps_order[$user->step_count]['step']);
+			$next_dialog 		= "";
+			$next_step			= "";
+			eval($step->code);
+			if ($next_dialog == "" && count($dialog->steps_order) == $user->step_count && $next_step == "")
+			{
+				$user->dialog_id 	= Settings::get('dialog_id');
+				$user->step_count 	= Settings::get('step_id');
+				$user->save();
+			}
+			else if($next_dialog != "" && $next_step == "")
+			{
+				$user->dialog_id  = $next_dialog;
+				$user->step_count = Settings::get('step_id');
+				$user->save();
+			}
+			else if($next_dialog != "" && $next_step != "")
+			{
+				$user->dialog_id  = $next_dialog;
+				$user->step_count = $next_step;
+				$user->save();
+			}
+			else if ($next_step != "")
+			{
+				$user->step_count = $next_step;
+				$user->save();
+			}
+			else if ($next_step == "")
+			{
+				$user->step_count = $user->step_count + 1;
+				$user->save();
+			}
+		}
+		else {
 			$user->dialog_id 	= Settings::get('dialog_id');
 			$user->step_count 	= Settings::get('step_id');
+			$user->variables = "";
 			$user->save();
+			$telegram->sendMessage([
+            'chat_id' => $chat_id,
+            'text' => "Reset: ok."
+        ]);
 		}
-		else if($next_dialog != "" && $next_step == "")
-		{
-			$user->dialog_id  = $next_dialog;
-			$user->step_count = Settings::get('step_id');
-			$user->save();
-		}
-		else if($next_dialog != "" && $next_step != "")
-		{
-			$user->dialog_id  = $next_dialog;
-			$user->step_count = $next_step;
-			$user->save();
-		}
-		else if ($next_step != "")
-		{
-			$user->step_count = $next_step;
-			$user->save();
-		}
-		else if ($next_step == "")
-		{
-			$user->step_count = $user->step_count + 1;
-			$user->save();
-		}
-
 	}
 	catch(Illuminate\Database\Eloquent\ModelNotFoundException $e){
 		eval(Step::find(Settings::get('step_id'))->code);
 	}
 	return ("it's ok");
+});
+
+
+Route::post('bot/sendmessage', function () {
+	$API_KEY = Settings::get('tg_api_key');
+	$telegram = new Api($API_KEY);
+	if ($_POST['broadcast_type'] == 0)
+	{
+		$users_ids = explode(",", $_POST['users_ids']);
+		try{
+			foreach ($users_ids as $key => $user_id) {
+				$telegram->sendMessage([
+	            'chat_id' => $user_id,
+	            'text' => $_POST['message']
+	        ]);
+			}
+		}
+		catch( Exception $ErrorHandle ){
+			return "Problem with users getting (exact users)";
+		}
+	}
+	else {
+		try{
+			$users = User::all();
+			foreach ($users as $key => $user) {
+				$telegram->sendMessage([
+	            'chat_id' => $user->id,
+	            'text' => $_POST['message']
+	        ]);
+			}
+		}
+		catch( Exception $ErrorHandle ){
+			return "Problem with users getting (all users)" . $ErrorHandle;
+		}
+	}
 });

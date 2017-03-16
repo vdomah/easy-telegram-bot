@@ -66,3 +66,6 @@
 1.0.23:
     - 'Updated table eugenetolok_telegram_users'
     - builder_table_update_eugenetolok_telegram_users_8.php
+1.0.24:
+    - 'Updated table eugenetolok_telegram_users'
+    - builder_table_update_eugenetolok_telegram_users_9.php
