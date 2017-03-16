@@ -125,30 +125,30 @@ Route::post('bot/sendmessage', function () {
 	if ($_POST['broadcast_type'] == 0)
 	{
 		$users_ids = explode(",", $_POST['users_ids']);
-		try{
-			foreach ($users_ids as $key => $user_id) {
-				$telegram->sendMessage([
-	            'chat_id' => $user_id,
-	            'text' => $_POST['message']
-	        ]);
+		foreach ($users_ids as $key => $user_id) {
+			try{
+					$telegram->sendMessage([
+		            'chat_id' => $user_id,
+		            'text' => $_POST['message']
+		        ]);
+				}
+			catch( Exception $ErrorHandle ){
+				//
 			}
-		}
-		catch( Exception $ErrorHandle ){
-			return "Problem with users getting (exact users)";
 		}
 	}
 	else {
-		try{
-			$users = User::all();
-			foreach ($users as $key => $user) {
-				$telegram->sendMessage([
-	            'chat_id' => $user->id,
-	            'text' => $_POST['message']
-	        ]);
+		foreach ($users as $key => $user) {
+			try{
+				$users = User::all();
+					$telegram->sendMessage([
+		            'chat_id' => $user->id,
+		            'text' => $_POST['message']
+		        ]);
 			}
-		}
-		catch( Exception $ErrorHandle ){
-			return "Problem with users getting (all users)" . $ErrorHandle;
+			catch( Exception $ErrorHandle ){
+				//
+			}
 		}
 	}
 });
