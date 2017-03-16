@@ -26,11 +26,11 @@ There are a lot of tutorials on how to do it.
 ####Set a webHook.
 To set webHook just go to this address:
 ~~~~
-https://api.telegram.org/bot123456789:ABCDIFGHIGKLMNOpqrstuvwxyz/setWebhook?url=https://example.com/eugenetolok/bot/
+https://api.telegram.org/bot123456789:ABCDIFGHIGKLMNOpqrstuvwxyz/setWebhook?url=https://example.com/eugenetolok/bot/v3
 ~~~~
 Where 
 1. "123456789:ABCDIFGHIGKLMNOpqrstuvwxyz" is example token, so replace it with your own token.
-2. https://example.com/eugenetolok/bot/ - example bot url. If you didn't change routes.php, just replace domain. 
+2. https://example.com/eugenetolok/bot/v3 - example bot url. If you didn't change routes.php, just replace domain. 
 
 *Note:* you need ssl enabled on your site to use webhooks in this plugin! 
 ####Add API key to settings
