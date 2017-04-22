@@ -69,3 +69,18 @@
 1.0.24:
     - 'Updated table eugenetolok_telegram_users'
     - builder_table_update_eugenetolok_telegram_users_9.php
+1.0.25:
+    - 'Updated table eugenetolok_telegram_users'
+    - builder_table_update_eugenetolok_telegram_users_10.php
+1.0.26:
+    - 'Updated table eugenetolok_telegram_users'
+    - builder_table_update_eugenetolok_telegram_users_11.php
+1.0.27:
+    - 'Updated table eugenetolok_telegram_users'
+    - builder_table_update_eugenetolok_telegram_users_12.php
+1.0.28:
+    - 'Updated table eugenetolok_telegram_users'
+    - builder_table_update_eugenetolok_telegram_users_13.php
+1.0.29:
+    - 'Added new columns'
+    - builder_table_update_eugenetolok_telegram_users_14.php

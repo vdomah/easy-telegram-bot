@@ -4,8 +4,8 @@
  * for using the new PHP 7 random_* API in PHP 5 projects
  * 
  * The MIT License (MIT)
- *
- * Copyright (c) 2015 - 2016 Paragon Initiative Enterprises
+ * 
+ * Copyright (c) 2015 Paragon Initiative Enterprises
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -67,16 +67,16 @@ if (!is_callable('random_bytes')) {
             if (!empty($fp)) {
                 /**
                  * stream_set_read_buffer() does not exist in HHVM
-                 *
+                 * 
                  * If we don't set the stream's read buffer to 0, PHP will
                  * internally buffer 8192 bytes, which can waste entropy
-                 *
+                 * 
                  * stream_set_read_buffer returns 0 on success
                  */
-                if (is_callable('stream_set_read_buffer')) {
+                if (function_exists('stream_set_read_buffer')) {
                     stream_set_read_buffer($fp, RANDOM_COMPAT_READ_BUFFER);
                 }
-                if (is_callable('stream_set_chunk_size')) {
+                if (function_exists('stream_set_chunk_size')) {
                     stream_set_chunk_size($fp, RANDOM_COMPAT_READ_BUFFER);
                 }
             }

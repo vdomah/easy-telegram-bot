@@ -8,7 +8,6 @@ use Model;
 class User extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    use \October\Rain\Database\Traits\SoftDelete;
 
     /*
      * Validation
